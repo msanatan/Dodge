@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class SquareEnemyController : MonoBehaviour
 {
     private float speed = 80f;
     private Vector2 direction;
