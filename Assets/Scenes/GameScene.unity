@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreText: {fileID: 519707102}
+  squareEnemyPrefab: {fileID: 1792980672929843392, guid: 44082125b562ce143ae75a2a6c34d786, type: 3}
 --- !u!4 &360231066
 Transform:
   m_ObjectHideFlags: 0
