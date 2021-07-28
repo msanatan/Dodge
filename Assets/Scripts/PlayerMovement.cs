@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 maxScreenBounds;
     float width;
     float height;
+    public UnityEvent gameOverEvent;
 
     private void Awake()
     {
@@ -50,8 +52,8 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        
+        gameOverEvent.Invoke();
     }
 }
