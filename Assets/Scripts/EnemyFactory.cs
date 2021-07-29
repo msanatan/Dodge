@@ -6,6 +6,7 @@ public class EnemyFactory : MonoBehaviour
 {
     WaitForSeconds spawnDelay = new WaitForSeconds(3);
     [SerializeField] GameObject squareEnemyPrefab;
+    [SerializeField] GameObject xEnemyPrefab;
     bool spawnEnemies = true;
 
     // Start is called before the first frame update
@@ -28,7 +29,9 @@ public class EnemyFactory : MonoBehaviour
         while (spawnEnemies)
         {
             var xPosition = Random.value < 0.5f ? -2.5f : 2.5f;
+            var yPosition = Random.value < 0.5f ? -5.5f : 5.5f;
             Instantiate(squareEnemyPrefab, new Vector3(xPosition, Random.Range(topLeft.y, bottomRight.y), 0), Quaternion.Euler(0, 0, 0));
+            Instantiate(xEnemyPrefab, new Vector3(Random.Range(topLeft.y, bottomRight.y), yPosition, 0), Quaternion.Euler(0, 0, 0));
             yield return spawnDelay;
         }
     }

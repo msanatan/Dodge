@@ -671,7 +671,7 @@ Transform:
   m_Children:
   - {fileID: 540957201}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1305011405
 GameObject:
@@ -795,7 +795,7 @@ Transform:
   m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1305011409
 Rigidbody2D:
@@ -906,6 +906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   squareEnemyPrefab: {fileID: 1792980672929843392, guid: 44082125b562ce143ae75a2a6c34d786, type: 3}
+  xEnemyPrefab: {fileID: 5268926815834949514, guid: 7e4a07c736181df48808dd2ffacd16c1, type: 3}
 --- !u!1 &1966247373
 GameObject:
   m_ObjectHideFlags: 0
