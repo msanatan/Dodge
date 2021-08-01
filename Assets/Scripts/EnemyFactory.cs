@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemyFactory : MonoBehaviour
 {
-    WaitForSeconds spawnDelay = new WaitForSeconds(3);
+    [SerializeField] int spawnDelay = 3;
+    private WaitForSeconds spawnDelayYield;
     [SerializeField] GameObject squareEnemyPrefab;
     [SerializeField] GameObject xEnemyPrefab;
     bool spawnEnemies = true;
@@ -12,6 +13,7 @@ public class EnemyFactory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        spawnDelayYield = new WaitForSeconds(spawnDelay);
         StartCoroutine("SpawnEnemy");
     }
 
@@ -32,7 +34,7 @@ public class EnemyFactory : MonoBehaviour
             var yPosition = Random.value < 0.5f ? -5.5f : 5.5f;
             Instantiate(squareEnemyPrefab, new Vector3(xPosition, Random.Range(topLeft.y, bottomRight.y), 0), Quaternion.Euler(0, 0, 0));
             Instantiate(xEnemyPrefab, new Vector3(Random.Range(topLeft.y, bottomRight.y), yPosition, 0), Quaternion.Euler(0, 0, 0));
-            yield return spawnDelay;
+            yield return spawnDelayYield;
         }
     }
 
