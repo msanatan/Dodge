@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3648741202391370755}
   - component: {fileID: 1789533054363440873}
   - component: {fileID: 6881080283804023365}
-  - component: {fileID: 2560742869973255035}
+  - component: {fileID: 7790325246569570721}
   m_Layer: 0
   m_Name: XEnemy
   m_TagString: Untagged
@@ -132,7 +132,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4, y: 0.4}
   m_EdgeRadius: 0
---- !u!114 &2560742869973255035
+--- !u!114 &7790325246569570721
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,6 +141,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5268926815834949514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d30fa0ea304609f4a95e22c8329ce212, type: 3}
+  m_Script: {fileID: 11500000, guid: 2032b8a94e45b5944b5787dfa2a20c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

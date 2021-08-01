@@ -905,7 +905,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6566af8f962250447ae807d60d8c64b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnDelay: 1
+  spawnDelay: 1.5
+  minSpeed: 90
+  maxSpeed: 120
   squareEnemyPrefab: {fileID: 1792980672929843392, guid: 44082125b562ce143ae75a2a6c34d786, type: 3}
   xEnemyPrefab: {fileID: 5268926815834949514, guid: 7e4a07c736181df48808dd2ffacd16c1, type: 3}
 --- !u!1 &1966247373

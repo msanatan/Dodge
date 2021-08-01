@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class EnemyFactory : MonoBehaviour
 {
-    [SerializeField] int spawnDelay = 3;
+    [SerializeField] float spawnDelay = 2;
+    [SerializeField] float minSpeed = 70;
+    [SerializeField] float maxSpeed = 100;
     private WaitForSeconds spawnDelayYield;
     [SerializeField] GameObject squareEnemyPrefab;
     [SerializeField] GameObject xEnemyPrefab;
@@ -32,8 +34,15 @@ public class EnemyFactory : MonoBehaviour
         {
             var xPosition = Random.value < 0.5f ? -2.5f : 2.5f;
             var yPosition = Random.value < 0.5f ? -5.5f : 5.5f;
-            Instantiate(squareEnemyPrefab, new Vector3(xPosition, Random.Range(topLeft.y, bottomRight.y), 0), Quaternion.Euler(0, 0, 0));
-            Instantiate(xEnemyPrefab, new Vector3(Random.Range(topLeft.y, bottomRight.y), yPosition, 0), Quaternion.Euler(0, 0, 0));
+            var square = Instantiate<GameObject>(squareEnemyPrefab, new Vector3(xPosition, Random.Range(topLeft.y, bottomRight.y), 0), Quaternion.Euler(0, 0, 0));
+            var squareController = square.GetComponent<EnemyController>();
+            var squareDirection = new Vector2(xPosition  < 0 ? 1 : -1, 0);
+            squareController.Move(Random.Range(minSpeed, maxSpeed), squareDirection);
+
+            var xEnemy = Instantiate<GameObject>(xEnemyPrefab, new Vector3(Random.Range(topLeft.x, bottomRight.x), yPosition, 0), Quaternion.Euler(0, 0, 0));
+            var xController = xEnemy.GetComponent<EnemyController>();
+            var xDirection = new Vector2(0, yPosition < 0 ? 1 : -1);
+            xController.Move(Random.Range(minSpeed, maxSpeed), xDirection);
             yield return spawnDelayYield;
         }
     }

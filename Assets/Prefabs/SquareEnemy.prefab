@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3511151281882172003}
   - component: {fileID: 4228144736178917793}
   - component: {fileID: 166757966205460167}
-  - component: {fileID: 5505665645222890874}
+  - component: {fileID: 9184266765265788099}
   m_Layer: 0
   m_Name: SquareEnemy
   m_TagString: Enemy
@@ -132,7 +132,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
---- !u!114 &5505665645222890874
+--- !u!114 &9184266765265788099
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,7 +141,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1792980672929843392}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 26ec6e8c28931524f905e8c6d37466a8, type: 3}
+  m_Script: {fileID: 11500000, guid: 2032b8a94e45b5944b5787dfa2a20c32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0}
