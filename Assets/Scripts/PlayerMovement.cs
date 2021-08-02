@@ -15,8 +15,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
-        minScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
-        maxScreenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
+        minScreenBounds = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
+        maxScreenBounds = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
         playerControls = new PlayerControls();
         SpriteRenderer  spriteRenderer = GetComponent<SpriteRenderer>();
         width = spriteRenderer.bounds.size.x;

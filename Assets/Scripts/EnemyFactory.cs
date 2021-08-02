@@ -27,13 +27,14 @@ public class EnemyFactory : MonoBehaviour
 
     IEnumerator SpawnEnemy()
     {
-        Vector3 topLeft = Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
-        Vector3 bottomRight = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
+        Vector3 topLeft = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
+        Vector3 bottomRight = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
 
         while (spawnEnemies)
         {
-            var xPosition = Random.value < 0.5f ? -2.5f : 2.5f;
-            var yPosition = Random.value < 0.5f ? -5.5f : 5.5f;
+            var xPosition = Random.value < 0.5f ? topLeft.x : bottomRight.x;
+            var yPosition = Random.value < 0.5f ? topLeft.y : bottomRight.y;
+
             var square = Instantiate<GameObject>(squareEnemyPrefab, new Vector3(xPosition, Random.Range(topLeft.y, bottomRight.y), 0), Quaternion.Euler(0, 0, 0));
             var squareController = square.GetComponent<EnemyController>();
             var squareDirection = new Vector2(xPosition  < 0 ? 1 : -1, 0);
