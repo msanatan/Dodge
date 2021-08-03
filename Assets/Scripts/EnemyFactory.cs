@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyFactory : MonoBehaviour
 {
     [SerializeField] float spawnDelay = 2;
+    [SerializeField] float spawnDecrement = 0.1f;
     [SerializeField] float minSpeed = 70;
     [SerializeField] float maxSpeed = 100;
     private WaitForSeconds spawnDelayYield;
@@ -46,6 +47,12 @@ public class EnemyFactory : MonoBehaviour
             xController.Move(Random.Range(minSpeed, maxSpeed), xDirection);
             yield return spawnDelayYield;
         }
+    }
+
+    public void DecreaseSpawnTime()
+    {
+        spawnDelay -= spawnDecrement;
+        spawnDelayYield = new WaitForSeconds(spawnDelay);
     }
 
     public void ToggleSpawnFlag()
