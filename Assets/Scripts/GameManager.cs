@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     WaitForSeconds scoreDelay = new WaitForSeconds(1);
     bool gameOver = false;
     [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] int scoreMarkerForMoreEnemies = 25;
+    [SerializeField] EnemyFactory enemyFactory;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,10 @@ public class GameManager : MonoBehaviour
         {
             score++;
             scoreText.text = $"Score: {score}";
+            if (score % scoreMarkerForMoreEnemies == 0)
+            {
+                enemyFactory.DecreaseSpawnTime();
+            }
             yield return scoreDelay;
         }
     }
