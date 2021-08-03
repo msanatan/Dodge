@@ -154,6 +154,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreText: {fileID: 519707102}
+  scoreMarkerForMoreEnemies: 25
+  enemyFactory: {fileID: 1699635311}
 --- !u!4 &360231066
 Transform:
   m_ObjectHideFlags: 0
@@ -733,6 +735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDelay: 1.5
+  spawnDecrement: 0.05
   minSpeed: 90
   maxSpeed: 120
   squareEnemyPrefab: {fileID: 1792980672929843392, guid: 44082125b562ce143ae75a2a6c34d786, type: 3}
