@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     float width;
     float height;
     public UnityEvent gameOverEvent;
+    private bool gameOver = false;
 
     private void Awake()
     {
@@ -41,19 +42,27 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 currentMovement = playerControls.Player.Movement.ReadValue<Vector2>();
-        Vector3 movement = currentMovement * moveSpeed * Time.deltaTime;
-        Vector3 currentPosition = transform.position;
-        currentPosition += movement;
+        if (!gameOver)
+        {
+            Vector2 currentMovement = playerControls.Player.Movement.ReadValue<Vector2>();
+            Vector3 movement = currentMovement * moveSpeed * Time.deltaTime;
+            Vector3 currentPosition = transform.position;
+            currentPosition += movement;
 
-        currentPosition.x = Mathf.Clamp(currentPosition.x, minScreenBounds.x + width / 2, maxScreenBounds.x - width / 2);
-        currentPosition.y = Mathf.Clamp(currentPosition.y, minScreenBounds.y + height / 2, maxScreenBounds.y - height / 2);
-        transform.position = currentPosition;
+            currentPosition.x = Mathf.Clamp(currentPosition.x, minScreenBounds.x + width / 2, maxScreenBounds.x - width / 2);
+            currentPosition.y = Mathf.Clamp(currentPosition.y, minScreenBounds.y + height / 2, maxScreenBounds.y - height / 2);
+            transform.position = currentPosition;
+        }
 
     }
 
     void OnTriggerEnter2D(Collider2D collider)
     {
+        gameOver = true;
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.enabled = false;
+        var particleSystem = GetComponent<ParticleSystem>();
+        particleSystem.Play();
         gameOverEvent.Invoke();
     }
 }
