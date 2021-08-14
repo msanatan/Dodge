@@ -8,7 +8,7 @@ public class EnemyFactory : MonoBehaviour
     [SerializeField] float spawnDecrement = 0.1f;
     [SerializeField] float minSpeed = 70;
     [SerializeField] float maxSpeed = 100;
-    private WaitForSeconds spawnDelayYield;
+    WaitForSeconds spawnDelayYield;
     [SerializeField] GameObject squareEnemyPrefab;
     [SerializeField] GameObject xEnemyPrefab;
     bool spawnEnemies = true;
