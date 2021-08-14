@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] SceneLoader sceneLoader;
     [SerializeField] int score = 0;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] int scoreMarkerForMoreEnemies = 25;
@@ -42,5 +43,7 @@ public class GameManager : MonoBehaviour
     public void ToggleGameOver()
     {
         gameOver = !gameOver;
+        new WaitForSeconds(1f);
+        sceneLoader.LoadNextScene();
     }
 }

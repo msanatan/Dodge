@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19d16ae42664a0841952d33069887351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneLoader: {fileID: 1784958619}
   score: 0
   scoreText: {fileID: 519707102}
   scoreMarkerForMoreEnemies: 25
@@ -5575,6 +5576,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47855348a3ca024498ba9109d886950e, type: 3}
+--- !u!114 &1784958619 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4108089454849551203, guid: 47855348a3ca024498ba9109d886950e, type: 3}
+  m_PrefabInstance: {fileID: 1784958618}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4afff098707ee94c8536113c0ce7293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5796464958420777583
 PrefabInstance:
   m_ObjectHideFlags: 0
