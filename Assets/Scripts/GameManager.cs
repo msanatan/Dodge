@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int score = 0;
-    WaitForSeconds scoreDelay = new WaitForSeconds(1);
-    bool gameOver = false;
+    [SerializeField] int score = 0;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] int scoreMarkerForMoreEnemies = 25;
     [SerializeField] EnemyFactory enemyFactory;
+    WaitForSeconds scoreDelay = new WaitForSeconds(1);
+    bool gameOver = false;
 
     // Start is called before the first frame update
     void Start()

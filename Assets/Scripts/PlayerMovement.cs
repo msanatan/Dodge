@@ -5,14 +5,14 @@ using UnityEngine.Events;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private PlayerControls playerControls;
     [SerializeField] float moveSpeed = 5f;
+    public UnityEvent gameOverEvent;
+    bool gameOver = false;
+    PlayerControls playerControls;
     Vector3 minScreenBounds;
     Vector3 maxScreenBounds;
     float width;
     float height;
-    public UnityEvent gameOverEvent;
-    private bool gameOver = false;
 
     private void Awake()
     {

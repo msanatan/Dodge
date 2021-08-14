@@ -8,9 +8,9 @@ public class EnemyFactory : MonoBehaviour
     [SerializeField] float spawnDecrement = 0.1f;
     [SerializeField] float minSpeed = 70;
     [SerializeField] float maxSpeed = 100;
-    WaitForSeconds spawnDelayYield;
     [SerializeField] GameObject squareEnemyPrefab;
     [SerializeField] GameObject xEnemyPrefab;
+    WaitForSeconds spawnDelayYield;
     bool spawnEnemies = true;
 
     // Start is called before the first frame update
