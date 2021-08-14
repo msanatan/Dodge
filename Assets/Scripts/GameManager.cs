@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
         {
             score++;
             scoreText.text = $"Score: {score}";
+            PlayerStats.Score = score;
             if (score % scoreMarkerForMoreEnemies == 0)
             {
                 enemyFactory.DecreaseSpawnTime();
