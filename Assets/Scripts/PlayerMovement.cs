@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!gameOver)
+        if (!gameOver && !PausedManager.paused)
         {
             Vector3 currentPosition = transform.position;
             currentPosition += this.movement * moveSpeed * Time.deltaTime;
