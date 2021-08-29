@@ -7,6 +7,8 @@ public class PausedManager : MonoBehaviour
     public static bool paused = false;
     PausedAction action;
     [SerializeField] GameObject menu;
+    [SerializeField] GameObject pauseButton;
+    [SerializeField] SceneLoader sceneLoader;
 
     public void Awake()
     {
@@ -45,6 +47,7 @@ public class PausedManager : MonoBehaviour
         AudioListener.pause = true;
         paused = true;
         menu.SetActive(true);
+        pauseButton.SetActive(false);
     }
 
     public void ResumeGame()
@@ -53,6 +56,13 @@ public class PausedManager : MonoBehaviour
         AudioListener.pause = false;
         paused = false;
         menu.SetActive(false);
+        pauseButton.SetActive(true);
+    }
+
+    public void ReturnToMainMenu()
+    {
+        ResumeGame();
+        sceneLoader.LoadStartScene();
     }
 
     // Update is called once per frame

@@ -16,7 +16,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadStartScene()
     {
-        SceneManager.LoadSceneAsync(0, LoadSceneMode.Single);
+        StartCoroutine(LoadLevel(0));
     }
 
     public void QuitGame()
