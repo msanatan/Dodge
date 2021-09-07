@@ -6,6 +6,7 @@ public class EnemyFactory : MonoBehaviour
 {
     [SerializeField] float spawnDelay = 2;
     [SerializeField] float spawnDecrement = 0.1f;
+    [SerializeField] float minSpawnDelay = 1;
     [SerializeField] float minSpeed = 70;
     [SerializeField] float maxSpeed = 100;
     [SerializeField] GameObject squareEnemyPrefab;
@@ -51,8 +52,11 @@ public class EnemyFactory : MonoBehaviour
 
     public void DecreaseSpawnTime()
     {
-        spawnDelay -= spawnDecrement;
-        spawnDelayYield = new WaitForSeconds(spawnDelay);
+        if (spawnDelay > minSpawnDelay)
+        {
+            spawnDelay -= spawnDecrement;
+            spawnDelayYield = new WaitForSeconds(spawnDelay);
+        }
     }
 
     public void ToggleSpawnFlag()
