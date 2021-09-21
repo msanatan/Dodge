@@ -30,8 +30,6 @@ public class PlayerMovement : MonoBehaviour
     private void OnEnable()
     {
         playerControls.Enable();
-        inputManager.OnStartTouch += MoveWithTouch;
-        inputManager.OnEndTouch += StopMoving;
         inputManager.OnStartKeyboard += MoveWithKeyboard;
         inputManager.OnEndKeyboard += StopMoving;
     }
@@ -39,45 +37,8 @@ public class PlayerMovement : MonoBehaviour
     private void OnDisable()
     {
         playerControls.Disable();
-        inputManager.OnStartTouch -= MoveWithTouch;
-        inputManager.OnEndTouch -= StopMoving;
-        inputManager.OnStartKeyboard -= MoveWithTouch;
+        inputManager.OnStartKeyboard -= MoveWithKeyboard;
         inputManager.OnEndKeyboard -= StopMoving;
-    }
-
-    void MoveWithTouch(Vector2 screenPosition, float time)
-    {
-        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(new Vector3(screenPosition.x, screenPosition.y, Camera.main.nearClipPlane));
-        worldPosition.z = 0;
-        Vector2 moveDirection;
-        Debug.Log("World Coordinates: " + worldPosition);
-
-        if (worldPosition.y < verticalThreshold && worldPosition.y > -verticalThreshold)
-        {
-            // Left or right movement
-            if (worldPosition.x > 0)
-            {
-                moveDirection = new Vector2(1, 0);
-            }
-            else
-            {
-                moveDirection = new Vector2(-1, 0);
-            }
-        }
-        else
-        {
-            // Up or down movement
-            if (worldPosition.y > 0)
-            {
-                moveDirection = new Vector2(0, 1);
-            }
-            else
-            {
-                moveDirection = new Vector2(0, -1);
-            }
-        }
-
-        this.movement = moveDirection;
     }
 
     void MoveWithKeyboard(Vector2 moveDirection, float time)
