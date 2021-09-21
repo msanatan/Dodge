@@ -14,17 +14,9 @@
                     "interactions": "Press"
                 },
                 {
-                    "name": "TouchPress",
-                    "type": "Button",
-                    "id": "c33b0358-23ee-4eb7-b86e-c6556051c6fb",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "Press(behavior=2)"
-                },
-                {
-                    "name": "TouchPosition",
+                    "name": "TouchJoystick",
                     "type": "PassThrough",
-                    "id": "91994455-cc50-4916-ade1-4ce73159aa7d",
+                    "id": "372eb3f6-dff0-4c9f-9071-f6d2d072cfc7",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": ""
@@ -143,23 +135,12 @@
                 },
                 {
                     "name": "",
-                    "id": "9f7d4e8b-493e-43da-aeac-da2753923a8c",
-                    "path": "<Touchscreen>/touch0/press",
+                    "id": "d6c7cae9-3958-4b53-ad74-7d17ad51470b",
+                    "path": "<Gamepad>/dpad",
                     "interactions": "",
                     "processors": "",
                     "groups": "Touchscreen",
-                    "action": "TouchPress",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2e60893f-0f61-4f84-b6f6-615784201116",
-                    "path": "<Touchscreen>/primaryTouch/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Touchscreen",
-                    "action": "TouchPosition",
+                    "action": "TouchJoystick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

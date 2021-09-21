@@ -27,17 +27,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": ""Press""
                 },
                 {
-                    ""name"": ""TouchPress"",
-                    ""type"": ""Button"",
-                    ""id"": ""c33b0358-23ee-4eb7-b86e-c6556051c6fb"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": ""Press(behavior=2)""
-                },
-                {
-                    ""name"": ""TouchPosition"",
+                    ""name"": ""TouchJoystick"",
                     ""type"": ""PassThrough"",
-                    ""id"": ""91994455-cc50-4916-ade1-4ce73159aa7d"",
+                    ""id"": ""372eb3f6-dff0-4c9f-9071-f6d2d072cfc7"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -156,23 +148,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""9f7d4e8b-493e-43da-aeac-da2753923a8c"",
-                    ""path"": ""<Touchscreen>/touch0/press"",
+                    ""id"": ""d6c7cae9-3958-4b53-ad74-7d17ad51470b"",
+                    ""path"": ""<Gamepad>/dpad"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Touchscreen"",
-                    ""action"": ""TouchPress"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""2e60893f-0f61-4f84-b6f6-615784201116"",
-                    ""path"": ""<Touchscreen>/primaryTouch/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Touchscreen"",
-                    ""action"": ""TouchPosition"",
+                    ""action"": ""TouchJoystick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -207,8 +188,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Keyboard = m_Player.FindAction("Keyboard", throwIfNotFound: true);
-        m_Player_TouchPress = m_Player.FindAction("TouchPress", throwIfNotFound: true);
-        m_Player_TouchPosition = m_Player.FindAction("TouchPosition", throwIfNotFound: true);
+        m_Player_TouchJoystick = m_Player.FindAction("TouchJoystick", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -259,15 +239,13 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Player;
     private IPlayerActions m_PlayerActionsCallbackInterface;
     private readonly InputAction m_Player_Keyboard;
-    private readonly InputAction m_Player_TouchPress;
-    private readonly InputAction m_Player_TouchPosition;
+    private readonly InputAction m_Player_TouchJoystick;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
         public PlayerActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Keyboard => m_Wrapper.m_Player_Keyboard;
-        public InputAction @TouchPress => m_Wrapper.m_Player_TouchPress;
-        public InputAction @TouchPosition => m_Wrapper.m_Player_TouchPosition;
+        public InputAction @TouchJoystick => m_Wrapper.m_Player_TouchJoystick;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -280,12 +258,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Keyboard.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKeyboard;
                 @Keyboard.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKeyboard;
                 @Keyboard.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnKeyboard;
-                @TouchPress.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouchPress;
-                @TouchPress.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouchPress;
-                @TouchPress.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouchPress;
-                @TouchPosition.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouchPosition;
-                @TouchPosition.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouchPosition;
-                @TouchPosition.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouchPosition;
+                @TouchJoystick.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouchJoystick;
+                @TouchJoystick.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouchJoystick;
+                @TouchJoystick.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnTouchJoystick;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -293,12 +268,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Keyboard.started += instance.OnKeyboard;
                 @Keyboard.performed += instance.OnKeyboard;
                 @Keyboard.canceled += instance.OnKeyboard;
-                @TouchPress.started += instance.OnTouchPress;
-                @TouchPress.performed += instance.OnTouchPress;
-                @TouchPress.canceled += instance.OnTouchPress;
-                @TouchPosition.started += instance.OnTouchPosition;
-                @TouchPosition.performed += instance.OnTouchPosition;
-                @TouchPosition.canceled += instance.OnTouchPosition;
+                @TouchJoystick.started += instance.OnTouchJoystick;
+                @TouchJoystick.performed += instance.OnTouchJoystick;
+                @TouchJoystick.canceled += instance.OnTouchJoystick;
             }
         }
     }
@@ -324,7 +296,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     public interface IPlayerActions
     {
         void OnKeyboard(InputAction.CallbackContext context);
-        void OnTouchPress(InputAction.CallbackContext context);
-        void OnTouchPosition(InputAction.CallbackContext context);
+        void OnTouchJoystick(InputAction.CallbackContext context);
     }
 }
