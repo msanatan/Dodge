@@ -149,7 +149,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d6c7cae9-3958-4b53-ad74-7d17ad51470b"",
-                    ""path"": ""<Gamepad>/dpad"",
+                    ""path"": ""<Joystick>/stick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Touchscreen"",
