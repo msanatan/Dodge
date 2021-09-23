@@ -28,7 +28,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""TouchJoystick"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Value"",
                     ""id"": ""372eb3f6-dff0-4c9f-9071-f6d2d072cfc7"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",

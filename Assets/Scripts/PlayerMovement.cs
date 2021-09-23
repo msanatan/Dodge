@@ -32,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
         playerControls.Enable();
         inputManager.OnStartKeyboard += MoveWithKeyboard;
         inputManager.OnEndKeyboard += StopMoving;
+        inputManager.OnStartTouchJoystick += MoveWithTouchJoystick;
+        inputManager.OnEndTouchJoystick += StopMoving;
     }
 
     private void OnDisable()
@@ -39,6 +41,11 @@ public class PlayerMovement : MonoBehaviour
         playerControls.Disable();
         inputManager.OnStartKeyboard -= MoveWithKeyboard;
         inputManager.OnEndKeyboard -= StopMoving;
+    }
+
+    void MoveWithTouchJoystick(Vector2 moveDirection, float time)
+    {
+        this.movement = moveDirection;
     }
 
     void MoveWithKeyboard(Vector2 moveDirection, float time)

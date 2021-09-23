@@ -10,6 +10,10 @@ public class InputManager : MonoBehaviour
     public event StartKeyboardEvent OnStartKeyboard;
     public delegate void EndKeyboardEvent(Vector2 position, float time);
     public event EndKeyboardEvent OnEndKeyboard;
+    public delegate void StartTouchJoystickEvent(Vector2 position, float time);
+    public event StartKeyboardEvent OnStartTouchJoystick;
+    public delegate void EndTouchJoystickEvent(Vector2 position, float time);
+    public event EndKeyboardEvent OnEndTouchJoystick;
     PlayerControls playerControls;
 
     private void Awake()
@@ -32,6 +36,8 @@ public class InputManager : MonoBehaviour
     {
         playerControls.Player.Keyboard.started += ctx => StartKeyboard(ctx);
         playerControls.Player.Keyboard.canceled += ctx => EndKeyboard(ctx);
+        playerControls.Player.TouchJoystick.performed += ctx => StartTouchJoystick(ctx);
+        playerControls.Player.TouchJoystick.canceled += ctx => EndTouchJoystick(ctx);
     }
 
     void StartKeyboard(InputAction.CallbackContext context)
@@ -46,7 +52,23 @@ public class InputManager : MonoBehaviour
     {
         if (OnEndKeyboard != null)
         {
-            OnEndKeyboard(playerControls.Player.Keyboard.ReadValue<Vector2>(), (float)context.time);
+            OnEndKeyboard(Vector2.zero, (float)context.time);
+        }
+    }
+
+    void StartTouchJoystick(InputAction.CallbackContext context)
+    {
+        if (OnStartTouchJoystick != null)
+        {
+            OnStartTouchJoystick(playerControls.Player.TouchJoystick.ReadValue<Vector2>(), (float)context.startTime);
+        }
+    }
+
+    void EndTouchJoystick(InputAction.CallbackContext context)
+    {
+        if (OnEndTouchJoystick != null)
+        {
+            OnEndTouchJoystick(Vector2.zero, (float)context.time);
         }
     }
 }
