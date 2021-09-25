@@ -493,7 +493,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.5
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -566,7 +566,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5621103, y: 1}
+    m_SensorSize: {x: 0.56153846, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6738,7 +6738,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0.5
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -6781,7 +6781,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1699635310
 Transform:
   m_ObjectHideFlags: 0
@@ -7280,7 +7280,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5796464958449304080, guid: 997d59cf030486243ad79a7bc20ffc73, type: 3}
       propertyPath: orthographic size
-      value: 6.6712885
+      value: 6.6780825
       objectReference: {fileID: 0}
     - target: {fileID: 5796464958449304080, guid: 997d59cf030486243ad79a7bc20ffc73, type: 3}
       propertyPath: m_BackGroundColor.a
