@@ -6859,8 +6859,8 @@ MonoBehaviour:
   minSpawnDelay: 1
   minSpeed: 90
   maxSpeed: 120
-  squareEnemyPrefab: {fileID: 1792980672929843392, guid: 44082125b562ce143ae75a2a6c34d786, type: 3}
-  xEnemyPrefab: {fileID: 5268926815834949514, guid: 7e4a07c736181df48808dd2ffacd16c1, type: 3}
+  horizontalEnemyPrefab: {fileID: 1792980672929843392, guid: 44082125b562ce143ae75a2a6c34d786, type: 3}
+  verticalEnemyPrefab: {fileID: 5268926815834949514, guid: 7e4a07c736181df48808dd2ffacd16c1, type: 3}
 --- !u!1001 &1784958618
 PrefabInstance:
   m_ObjectHideFlags: 0
