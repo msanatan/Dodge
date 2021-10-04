@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8643617417874181746}
   - component: {fileID: -8678329423950593406}
   - component: {fileID: 5825903423822332599}
+  - component: {fileID: 7736860253136253150}
   m_Layer: 0
   m_Name: DiamondEnemy
   m_TagString: Untagged
@@ -26,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6727792235259239518}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0, z: 0.7071068, w: -0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
 --- !u!212 &8643617417874181746
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -149,3 +150,15 @@ PolygonCollider2D:
       - {x: 0.02, y: -0.06}
       - {x: 0, y: -0.089999996}
       - {x: 0, y: -0.08}
+--- !u!114 &7736860253136253150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6727792235259239518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2032b8a94e45b5944b5787dfa2a20c32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
