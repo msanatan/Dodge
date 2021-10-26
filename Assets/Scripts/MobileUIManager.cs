@@ -10,8 +10,7 @@ public class MobileUIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bool isMobile = SystemInfo.deviceType == DeviceType.Handheld;
-        if (!isMobile && !(showInEditor && Application.isEditor)) {
+        if (!(Application.isMobilePlatform || (showInEditor && Application.isEditor))) {
             foreach (GameObject ui in mobileUI) {
                 ui.SetActive(false);
             }
