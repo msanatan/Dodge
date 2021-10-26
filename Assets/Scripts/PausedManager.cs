@@ -64,10 +64,4 @@ public class PausedManager : MonoBehaviour
         ResumeGame();
         sceneLoader.LoadStartScene();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

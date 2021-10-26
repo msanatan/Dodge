@@ -19,12 +19,6 @@ public class GameManager : MonoBehaviour
         StartCoroutine("IncrementScore", score);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     IEnumerator IncrementScore(int score)
     {
         while (!gameOver)

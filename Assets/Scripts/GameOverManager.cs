@@ -11,10 +11,4 @@ public class GameOverManager : MonoBehaviour
     {
         scoreText.text = string.Format("{0}: {1}", scoreText.text, PlayerStats.Score);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
