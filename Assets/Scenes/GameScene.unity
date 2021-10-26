@@ -235,7 +235,7 @@ MonoBehaviour:
   sceneLoader: {fileID: 1784958619}
   score: 0
   scoreText: {fileID: 519707102}
-  scoreMarkerForMoreEnemies: 25
+  scoreMarkerForMoreEnemies: 15
   enemyFactory: {fileID: 1699635311}
 --- !u!4 &360231066
 Transform:
@@ -6855,12 +6855,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnDelay: 1.5
+  diagonalSpawnDelay: 25
   spawnDecrement: 0.05
-  minSpawnDelay: 1
+  minSpawnDelay: 0.8
   minSpeed: 90
   maxSpeed: 120
   horizontalEnemyPrefab: {fileID: 1792980672929843392, guid: 44082125b562ce143ae75a2a6c34d786, type: 3}
   verticalEnemyPrefab: {fileID: 5268926815834949514, guid: 7e4a07c736181df48808dd2ffacd16c1, type: 3}
+  diagonalEnemyPrefab: {fileID: 6727792235259239518, guid: ff4fd55de6096bd478d3562d96aee48d, type: 3}
 --- !u!1001 &1784958618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7326,7 +7328,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5796464958449304080, guid: 997d59cf030486243ad79a7bc20ffc73, type: 3}
       propertyPath: orthographic size
-      value: 6.659483
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5796464958449304080, guid: 997d59cf030486243ad79a7bc20ffc73, type: 3}
       propertyPath: m_BackGroundColor.a
